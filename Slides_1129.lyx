@@ -1,0 +1,6324 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+% Fonts packages
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{mathptmx}
+\usepackage[scaled=0.9]{helvet}
+\usepackage{courier}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Table packages
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{tabulary}
+\usepackage[para]{threeparttablex}
+\usepackage{bigstrut}
+\usepackage{multirow}
+
+% Graphics packages
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{transparent}
+\usepackage{pgfplots, filecontents}
+\usepackage{pgfgantt}
+\pgfplotsset{compat=newest, plot coordinates/math parser=false, try min ticks=3,max space between ticks=50}
+
+% Tikz packages
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes, snakes, arrows.meta, shapes.misc, patterns, shapes.symbols, decorations.pathreplacing, decorations, positioning, graphs, graphs.standard, quotes, shapes.geometric, backgrounds, calc, hobby}
+
+% Caption packages
+\usepackage[compatibility=false]{caption}
+\usepackage[position=b]{subcaption}
+
+% Other packages
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage{pdflscape}
+\usepackage{placeins}
+\usepackage{enumerate}
+\usepackage{natbib}
+
+% Theorem styles
+\newtheorem{axiom}{Axiom}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{assumption}{Assumption}
+
+% Highlighting commands
+\newcommand{\highlight}[1]{%
+  \colorbox{red!50}{$\displaystyle#1$}}
+\newcommand{\highlightw}[1]{%
+  \phantom{\colorbox{red!50}{$\displaystyle#1$}}}
+
+% Signed quotes
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+% Beamer templates
+\setbeamertemplate{blocks}[rounded][shadow=true]
+%\setbeamertemplate{mini frames}{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{itemize/enumerate subbody}{size = \normalsize}
+\setbeamersize{text margin left=10pt,text margin right=10pt} 
+
+% Math alphabets
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+% PGFPlots settings
+\pgfplotsset{every axis/.append style={
+        scaled y ticks = false,
+        scaled x ticks = false,
+        x tick label style={/pgf/number format/.cd, 1000 sep={},precision=3}
+    }
+}
+
+% Measuring settings
+\makeatletter
+\let\save@measuring@true\measuring@true
+\def\measuring@true{%
+  \save@measuring@true
+  \def\beamer@sortzero##1{\beamer@ifnextcharospec{\beamer@sortzeroread{##1}}{}}%
+  \def\beamer@sortzeroread##1<##2>{}%
+  \def\beamer@finalnospec{}%
+}
+
+% Tale of contents
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamercolor{section in toc}{fg=black}
+
+\AtBeginSection[]{}
+\mode<presentation>
+{
+  \useoutertheme{smoothbars}
+}
+
+% Appendix page number
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\date{}
+\end_preamble
+\options png,tikz,envcountsect
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Inventor Mobility, Knowledge Diffusion, and Growth
+\end_layout
+
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{c} Yasutaka Koike-Mori 
+\backslash
+
+\backslash
+ 
+\backslash
+small UCLA 
+\backslash
+end{tabular} 
+\backslash
+and 
+\backslash
+begin{tabular}{c} Toshitaka Maruyama 
+\backslash
+
+\backslash
+ 
+\backslash
+small UCLA 
+\backslash
+end{tabular} 
+\backslash
+and 
+\backslash
+begin{tabular}{c} Koki Okumura 
+\backslash
+
+\backslash
+ 
+\backslash
+small UCLA 
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Innovation, Knowledge Diffusion, and Inventors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Innovation and knowledge diffusion determine firm and aggregate productivity
+ growth
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inventors play two important roles:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inventors as factor of innovation
+\end_layout
+
+\begin_layout Itemize
+Inventor mobility as intermediary for knowledge diffusion
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do inventors' labor market frictions and policies affect firm and aggregate
+ productivity growth? 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+New Theory and Data of Inventors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Endogenous growth model with frictional labor market for inventors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inventors engage in in-house R&D
+\end_layout
+
+\begin_layout Itemize
+Poaching firms learn from poached firms
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Administrative panel dataset on German inventors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Patent information
+\end_layout
+
+\begin_layout Itemize
+Labor market careers and wages
+\end_layout
+
+\begin_layout Itemize
+Establishments' characteristics
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Findings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Empirical Analysis
+\end_layout
+
+\begin_layout Itemize
+Patent productivity grows faster when a larger proportion of inventor inflows
+ originate from more innovative establishments
+\end_layout
+
+\begin_layout Itemize
+Inventors experience more wage increase when changing jobs relative to general
+ workers
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quantitative Analysis
+\end_layout
+
+\begin_layout Itemize
+Inventor labor market friction 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ economic growth rate 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Subsidies to high productivity firms 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aggregate output 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ in the short run
+\end_layout
+
+\begin_layout Itemize
+Aggregate output 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ in the long run
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Literature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Knowledge diffusion and growth
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size footnotesize
+Lucas and Moll (2014); Akcigit et.
+ al.
+ (2018); Buera and Oberfield (2020); Hopenhayn and Shi (2020); Benhabib,
+ Perla, and Tonetti (2021); Prato (2022)
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Inventor mobility b/w firms 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ knowledge diffusion
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Match with data on inventor mobility b/w firms
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Inventor mobility and knowledge diffusion (management)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size footnotesize
+Almeida and Kogut (1999); Song, Almeida, and Wu (2003); Rosenkopf and Almeida
+ (2003); Singh and Agrawal (2011)
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Incorporate insights into growth model
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Comparison with general workers
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On-the-job search and firm dynamics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size footnotesize
+Schaal (2017); Elsby and Gottfries (2021); Bilal, Engbom, Mongey, and Violante
+ (2022)
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Incorporate recent theoretical development to make model tractable
+\color inherit
+
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Worker mobility and knowledge diffusion
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+Herkenhoff, Lise, Menzio, and Phillips (2018), Jarosch, Oberfield, and Rossi-Han
+sberg (2021)
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Continuous time
+\end_layout
+
+\begin_layout Itemize
+Inventors and firms randomly match in a frictional labor market
+\end_layout
+
+\begin_layout Itemize
+Inventors engage in in-house R&D
+\end_layout
+
+\begin_layout Itemize
+Poaching firms learns from poached firms
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventors and Firms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Continuous time
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inventors are ex-ante homogeneous
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Firms are heterogeneous over
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+detrended productivity / knowledge 
+\begin_inset Formula $z\in(0,\overline{z}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the N of inventors 
+\begin_inset Formula $n\in\mathbb{R}^{+}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matching Technology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Posting 
+\begin_inset Formula $v$
+\end_inset
+
+ vacancies costs 
+\begin_inset Formula $c(v)Z$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $c(v)$
+\end_inset
+
+: increasing and convex in 
+\begin_inset Formula $v\in\mathbb{R}^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z$
+\end_inset
+
+: average productivity
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A vacancy randomly matches an inventor in other firms at a rate 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Firms’ Productivity Dynamics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+In-house R&D
+\series default
+: Productivity 
+\begin_inset Formula $z$
+\end_inset
+
+ increases by 
+\begin_inset Formula $\gamma(n)z$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\gamma'(n)>0$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Knowledge diffusion
+\series default
+: When firm 
+\begin_inset Formula $z$
+\end_inset
+
+ poaches an inventor from firm 
+\begin_inset Formula $z'$
+\end_inset
+
+, productivity 
+\begin_inset Formula $z$
+\end_inset
+
+ increases by 
+\begin_inset Formula $\alpha(z'/z)Z$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\alpha'(z'/z)>0$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Leapfrog
+\series default
+ to the technology frontier 
+\begin_inset Formula $\overline{z}$
+\end_inset
+
+ with a rate 
+\begin_inset Formula $\eta$
+\end_inset
+
+ (
+\size small
+Benhabib
+\size default
+ et al.
+ 2021)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Household
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consists of 
+\begin_inset Formula $\mathrm{n}$
+\end_inset
+
+ individuals
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each supplies inelastically one unit of inventor
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Full insurance within the family 
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}e^{-\rho t}\log C(t)dt
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\dot{\mathcal{A}}(t)=r(t)\mathcal{A}(t)+w(t)\mathrm{n}-C(t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{A}(t)$
+\end_inset
+
+: mutual fund that owns all firms 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w(t)$
+\end_inset
+
+: average wage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contractual Environment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bertrand competition when matching
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Poaching firm makes take-leave constant wage offer
+\end_layout
+
+\begin_layout Itemize
+Targeted firm makes take-leave constant wage offer
+\end_layout
+
+\begin_layout Itemize
+Inventor decides
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Privately efficient vacancy posting (Bilal et al.
+ 2022)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firms post the number of vacancies that maximize the sum of firm's and its
+ inventors' values.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Joint Value
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Under the contractual environment, the firm and its incumbent inventors
+ maximize their joint value 
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+State space: (1) firm's productivity 
+\begin_inset Formula $z$
+\end_inset
+
+ and (2) the N of inventors 
+\begin_inset Formula $n$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Independent of the wage distributions within firms
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Allocations are obtained from 
+\begin_inset Formula $\Omega(z,n)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Which Firms Learn from Which Firms?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firm 
+\begin_inset Formula $(z,n)$
+\end_inset
+
+ can poach inventors from firm 
+\begin_inset Formula $(z',n')$
+\end_inset
+
+ if
+\begin_inset Formula 
+\[
+\underbrace{\Omega_{n}(z,n)}_{\substack{\text{Marginal value of inventors}\\
+\text{due to in-house R\&D}
+}
+}+\underbrace{\alpha(z'/z)Z\Omega_{z}(z,n)}_{\substack{\text{Marginal value of inventors}\\
+\text{due to knowledge diffusion}
+}
+}>\Omega_{n}(z',n')
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hamilton-Jacobi-Bellman Equation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\begin{align*}
+ & \underbrace{\rho\Omega(z,n)}_{\text{Required return}}=\max_{v\geq0}\ \underbrace{z}_{\text{Production}}-\underbrace{c(v)Z}_{\text{Hiring cost}}\\
+ & +\underbrace{Av\int\left[\Omega_{n}(z,n)+\alpha(z'/z)Z\Omega_{z}(z,n)-\Omega_{n}(z',n')\right]^{+}dF_{n}(z',n')}_{\text{Poaching hire}}\\
+ & +\underbrace{\left[\gamma(n)-g\right]z\Omega_{z}(z,n)}_{\text{In-house R\&D }-\text{ Obsolescence}}+\underbrace{\eta\left[\Omega(\overline{z},n)-\Omega(z,n)\right]}_{\text{Leapfrog}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $g$
+\end_inset
+
+: economic growth rate
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $F_{n}$
+\end_inset
+
+: inventor-weighted firm distribution
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Firm-Level Productivity Drift
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\begin{align*}
+\mu_{z}(z,n)= & \underbrace{\gamma(n)z}_{\text{In-house R\&D}}\\
+ & +\underbrace{Av(z,n)Z\int\mathbb{I}_{P}(z,n,z',n')\alpha(z'/z)dF_{n}(z',n')}_{\text{Knowledge diffusion}}\\
+ & -\underbrace{gz}_{\text{Obsolescence}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{I}_{P}(z,n,z',n')$
+\end_inset
+
+: indicator function that takes 1 if the poach successes
+\end_layout
+
+\begin_layout Itemize
+In addition, we need to take into account leapfrog
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Growth Rate on BGP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Focus on a BGP where the average productivity grows at a constant rate 
+\begin_inset Formula $g$
+\end_inset
+
+ and the detrended firm distribution 
+\begin_inset Formula $f(z,n)$
+\end_inset
+
+ is stationary
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Productivity growth rate of the technology frontier is
+\begin_inset Formula 
+\begin{align*}
+\overline{g} & =\max_{n\in\{n|f(\overline{z},n)>0\}}\underbrace{\gamma(n)}_{\text{In-house R\&D}}{\color{lightgray}+\underbrace{Av(\overline{z},n)\frac{Z}{\overline{z}}\int\mathbb{I}_{P}(\overline{z},n,z',n')\alpha(z'/\overline{z})dF_{n}(z',n')}_{\text{knowledge diffusion}}}\\
+ & \simeq\gamma(\overline{n})\text{ where }\overline{n}\text{ is the largest inventor size among frontier firms}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Every percentile of productivity distribution grows at the same rate 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+g=\overline{g}\simeq\gamma(\overline{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Original and Detrended Marginal Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+begin{center} 
+\backslash
+begin{subfigure}[]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Original} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/Distribution_original.tex}} 
+\backslash
+end{subfigure}~ 
+\backslash
+begin{subfigure}[]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Detrended} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/Distribution_detrend.tex}} 
+\backslash
+end{subfigure} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Empirical Analysis
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+INV-BIO Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+German linked inventor biography data (INV-BIO)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inventors' patent information (European Patent Office)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\quad\quad+$
+\end_inset
+
+ Employer-employee match data (Germany)
+\end_layout
+
+\begin_layout Itemize
+1980–2014
+\end_layout
+
+\begin_layout Itemize
+152,350 inventors who have patents during 1998–2014
+\end_layout
+
+\begin_layout Itemize
+643,856 patents
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Flows across Establishments: Rank by Citation 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "job_flow_table"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[t] 
+\backslash
+begin{center} {
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcccccccc } 
+\backslash
+hline
+\backslash
+hline 
+\backslash
+multicolumn{2}{l}{
+\backslash
+multirow{2}{*}{Share of job flows (
+\backslash
+%) }} & 
+\backslash
+multicolumn{6}{c}{Destination establishment by citation rank} 
+\backslash
+
+\backslash
+ & & $
+\backslash
+leq$50
+\backslash
+% & 50-60 & 60-70 & 70-80 & 80-90 & 90-100 
+\backslash
+
+\backslash
+
+\backslash
+hline & $
+\backslash
+leq$50
+\backslash
+% & 2.3 & 0.2 & 0.3 & 0.4 & 0.7 & 3.6 
+\backslash
+
+\backslash
+ Origin & 50-60 & 
+\backslash
+textcolor{red}{1.7} & 0.2 & 0.2 & 0.3 & 0.5 & 2.5 
+\backslash
+
+\backslash
+ establishment & 60-70 & 
+\backslash
+textcolor{red}{1.9} & 
+\backslash
+textcolor{red}{0.2} & 0.3 & 0.3 & 0.6 & 3.0 
+\backslash
+
+\backslash
+ by citation rank & 70-80 & 
+\backslash
+textcolor{red}{2.2} & 
+\backslash
+textcolor{red}{0.2} & 
+\backslash
+textcolor{red}{0.2} & 0.4 & 0.7 & 3.5 
+\backslash
+
+\backslash
+ & 80-90 & 
+\backslash
+textcolor{red}{3.5} & 
+\backslash
+textcolor{red}{0.4} & 
+\backslash
+textcolor{red}{0.5} & 
+\backslash
+textcolor{red}{0.6} & 1.2 & 5.9 
+\backslash
+
+\backslash
+ & 90-100 & 
+\backslash
+textcolor{red}{16.0} & 
+\backslash
+textcolor{red}{1.6} & 
+\backslash
+textcolor{red}{1.9} & 
+\backslash
+textcolor{red}{2.8} & 
+\backslash
+textcolor{red}{5.4} & 34.2 
+\backslash
+
+\backslash
+
+\backslash
+hline 
+\backslash
+end{tabular} } 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{citations}_{e}=\sum_{i}\text{citations}_{i}\times\frac{n_{ie}}{n_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $e$
+\end_inset
+
+: establishment
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $i$
+\end_inset
+
+ : patent
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Higher 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Lower: 
+\color red
+39.1 
+\color inherit
+
+\begin_inset Formula $>$
+\end_inset
+
+ Lower 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Higher: 22.7 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{probit}{
+\backslash
+beamerbutton{Comparison with general workers}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Job Flows and Knowledge Diffusion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log z_{et+j}-\log z_{et}=\beta_{1}\text{H-Share}_{et}+\beta_{2}X_{et}+\alpha_{e}+\alpha_{t}+\varepsilon_{et}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z_{et}$
+\end_inset
+
+: patent citations at establishment 
+\begin_inset Formula $e$
+\end_inset
+
+ in year 
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3–5 years forward citation
+\end_layout
+
+\begin_layout Itemize
+backward 3-year moving average
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{H-Share}_{et}$
+\end_inset
+
+: inventor inflows from higher 
+\begin_inset Formula $z_{et}$
+\end_inset
+
+ / total inventor inflows to 
+\begin_inset Formula $e$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ensuremath{X_{et}}$
+\end_inset
+
+: total inventor inflows to
+\family roman
+ 
+\begin_inset Formula $e$
+\end_inset
+
+
+\family default
+, 
+\begin_inset Formula $\log\left(\text{N of inventors}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\log\left(\text{N of employee}\right)$
+\end_inset
+
+, mean wage of employee, 
+\begin_inset Formula $z_{et}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha_{e}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{t}$
+\end_inset
+
+: establishment & year FE
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ When Inventors Come from High
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "ols"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[t] 
+\backslash
+begin{center} 
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcccccc } 
+\backslash
+hline
+\backslash
+hline & 
+\backslash
+multicolumn{5}{c}{$
+\backslash
+log z_{et+j}-
+\backslash
+log z_{et}$}
+\backslash
+
+\backslash
+ & $j=3$ & $j=4$& $j=5$ & $j=3$ & $j=3$ 
+\backslash
+
+\backslash
+
+\backslash
+hline $
+\backslash
+text{
+\backslash
+text{H-Share}}_{et}$ ($
+\backslash
+%$) & .0022*** & .0028*** &.0027*** & .0024*** & .0024*** 
+\backslash
+
+\backslash
+ & (.0004) & (.0004) &(.0004) & (.0003) & (.0003) 
+\backslash
+
+\backslash
+ & & 
+\backslash
+
+\backslash
+ 
+\backslash
+hline Control & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Fixed Effects & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Citation & 3y fwd & 3y fwd & 3y fwd & 4y fwd & 5y fwd 
+\backslash
+
+\backslash
+ 
+\backslash
+hline $N$ & 24,625 & 22,270 &19,982 & 25,791 & 26,451
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Notes: SEs clustered by year and establishments are reported in parentheses.
+ * 
+\begin_inset Formula $p<0.1$
+\end_inset
+
+, **
+\begin_inset Formula $p<0.05$
+\end_inset
+
+, *** 
+\begin_inset Formula $p<0.01$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+The results are robust when we use regional patent citation rank as IV 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{iv}{
+\backslash
+beamerbutton{IV}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SIAB Data: Comparison with General Workers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Sample of Integrated Labour Market Biographies (SIAB)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+linked employer-employee data in Germany
+\end_layout
+
+\begin_layout Itemize
+2% random sample of workers
+\end_layout
+
+\begin_layout Itemize
+1980–2019
+\end_layout
+
+\begin_layout Itemize
+3,322,316 individuals
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How Do Inventors' Wages Change When Changing Jobs?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log w_{it}-\log w_{it-1}=\beta_{1}I_{it}+\beta_{2}D_{it}+\beta_{3}D_{it}I_{it}+\beta_{4}X_{it}+\alpha_{e}+\alpha_{t}+\varepsilon_{it}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{it}$
+\end_inset
+
+: the wage of job changer 
+\begin_inset Formula $i$
+\end_inset
+
+ in year 
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I_{it}$
+\end_inset
+
+: inventor dummy
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D_{it}=1\text{ if moving to a less productive establishment}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use (1) size or (2) mean wage as proxy for productivity
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $X_{it}$
+\end_inset
+
+: age, the square of age, gender, and education
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha_{e}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{t}$
+\end_inset
+
+: Destination establishment & year FE
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventors' Wages Increase More When Changing Jobs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} 
+\backslash
+begin{center} 
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcc} 
+\backslash
+hline
+\backslash
+hline & 
+\backslash
+multicolumn{2}{c}{$
+\backslash
+Delta 
+\backslash
+log w_{it}$} 
+\backslash
+
+\backslash
+ 
+\backslash
+hline $I_{it}$ & .017*** & .021*** 
+\backslash
+
+\backslash
+ & (.005) & (.004) 
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+ $D_{it}$ & $-$.078*** & $-$.084*** 
+\backslash
+
+\backslash
+ & (.006) & (.005) 
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+ $D_{it}
+\backslash
+times I_{it}$ & .016*** & $-$.002 
+\backslash
+
+\backslash
+ & (.006) & (.006) 
+\backslash
+
+\backslash
+ 
+\backslash
+hline Control & $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Fixed Effects & $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Measure for $D_{it}$ & Size & Mean wage 
+\backslash
+
+\backslash
+ $N$ & 859,888 & 859,861 
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Notes: SEs clustered by year and establishments are reported in parentheses.
+ * 
+\begin_inset Formula $p<0.1$
+\end_inset
+
+, **
+\begin_inset Formula $p<0.05$
+\end_inset
+
+, *** 
+\begin_inset Formula $p<0.01$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Implication of Empirical Findings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We find
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Patent productivity grows faster when a larger proportion of inventors originate
+ from more innovative establishments
+\end_layout
+
+\begin_layout Itemize
+Inventors experience more wage increase when changing jobs relative to general
+ workers
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+These findings imply
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+inventors transfer knowledge, especially from high to low
+\end_layout
+
+\begin_layout Itemize
+firms compensate for knowledge diffusion
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our model has these features
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Quantitative Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Forms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In-house R&D rate function: 
+\begin_inset Formula $\gamma(n,i)=\overline{\gamma}_{i}n^{\delta},\ i\in\left\{ h,l\right\} ,\ \overline{\gamma}_{h}>\overline{\gamma}_{l}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume firm's innovative ability 
+\begin_inset Formula $i$
+\end_inset
+
+ follows two-state Markov process
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $h\rightarrow l$
+\end_inset
+
+ at a rate 
+\begin_inset Formula $\lambda_{h}$
+\end_inset
+
+, 
+\begin_inset Formula $l\rightarrow h$
+\end_inset
+
+ at a rate 
+\begin_inset Formula $\lambda_{l}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The state variables are now 
+\begin_inset Formula $\left(z,n,i\right)$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Knowledge diffusion rate function: 
+\begin_inset Formula $\alpha(z'/z)=\overline{\alpha}\left(z'/z\right)^{\beta}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Vacancy cost function: 
+\begin_inset Formula $c(v)=\frac{\overline{c}}{\phi+1}v^{\phi+1}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Calibration: Externally Set or Directly Matched to Data 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Moment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Discount Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.0041
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+5% annual real interest rate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Vacancy Cost Elasticity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+3.45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Bilal et al.
+ (2022)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\overline{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Frontier Productivity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Normalization
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\mathrm{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Measure of Firms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Normalization
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\overline{c}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Vacancy Cost Coefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Normalization
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\overline{\gamma}_{l}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $l$
+\end_inset
+
+-type R&D Coefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Normalization
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\mathrm{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Measure of Inventors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Ave.
+ N of inventors per estab.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\lambda_{l}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $h\rightarrow l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\lambda_{h}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $l\rightarrow h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.02
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+\begin_inset Formula $\lambda_{l}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{h}$
+\end_inset
+
+ match estimation of 2 state Markov transition matrix for the change in
+ patent productivity 
+\begin_inset Formula $\Delta z_{et}$
+\end_inset
+
+ of establishments with 
+\begin_inset Formula $z_{et}$
+\end_inset
+
+ in top 10%.
+ Establishments with 
+\begin_inset Formula $\Delta z_{et}>0\ \left(<0\right)$
+\end_inset
+
+ are labeled 
+\begin_inset Formula $h$
+\end_inset
+
+ 
+\begin_inset Formula $\left(l\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Calibration: Internally Estimated
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\beta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Knowledge Diffusion Curvature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\overline{\alpha}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Knowledge Diffusion Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.0012
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+R&D Curvature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\overline{\gamma}_{h}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $h$
+\end_inset
+
+-type R&D Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.0006
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\eta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Leapfrog
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.0001
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Matching Efficiency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Moments
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Model
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+TFP Growth Rate (%, monthly) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.13
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Job to Job Transition Rate of Inventors (%, monthly) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1.13
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Distribution of Inventors by Establishments' Patent Citation Rank
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Next Slide
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Inventor Job Inflows by Establishments' Patent Citation Rank
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Next Slide
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Moments: Inventor Distributions by Productivity Rank
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+begin{center} 
+\backslash
+begin{subfigure}[t]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Inventor Distribution by Productivity Rank} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{ 
+\backslash
+input{figures/Invdist_prod.tex}} 
+\backslash
+label{table:moments1} 
+\backslash
+end{subfigure}~ 
+\backslash
+begin{subfigure}[t]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Inventor Inflow by Productivity Rank} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{ 
+\backslash
+input{figures/Invdist_poaching.tex}} 
+\backslash
+end{subfigure} 
+\backslash
+end{center} 
+\backslash
+end{figure} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Comparative Statics: Matching Efficiency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[t] 
+\backslash
+vspace*{-0.5cm} 
+\backslash
+begin{center} 
+\backslash
+begin{subfigure}[t]{.3
+\backslash
+linewidth} 
+\backslash
+caption{Aggregate Vacancies} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/CS_Vac.tex}} 
+\backslash
+end{subfigure}~ 
+\backslash
+begin{subfigure}[t]{.3
+\backslash
+linewidth} 
+\backslash
+caption{EE Rate (
+\backslash
+%)} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/CS_EE.tex}} 
+\backslash
+end{subfigure}~
+\backslash
+begin{subfigure}[t]{.3
+\backslash
+linewidth} 
+\backslash
+caption{Growth Rate (
+\backslash
+%)} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/CS_growth.tex}} 
+\backslash
+end{subfigure} 
+\backslash
+begin{subfigure}[t]{.3
+\backslash
+linewidth} 
+\backslash
+caption{St.d.
+ of $
+\backslash
+log z$} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/CS_std_z.tex}} 
+\backslash
+end{subfigure}~ 
+\backslash
+begin{subfigure}[t]{.3
+\backslash
+linewidth} 
+\backslash
+caption{St.d.
+ of $
+\backslash
+log n$} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/CS_std_n.tex}} 
+\backslash
+end{subfigure} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matching Efficiency 
+\begin_inset Formula $A\uparrow\ \rightarrow\ $
+\end_inset
+
+Economic Growth Rate 
+\begin_inset Formula $g\uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Matching efficiency 
+\begin_inset Formula $A\uparrow$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inventor job flows 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Knowledge diffusion 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Productivity dispersion 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+High 
+\begin_inset Formula $z$
+\end_inset
+
+ firms (mainly grow by in-house R&D) hire more inventors relative to low
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ firms (mainly grow by knowledge diffusion)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Innovation at technology frontier 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Economic growth rate 
+\begin_inset Formula $g\uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Job Flow Decline and Secular Stagnation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+captionsetup{labelformat=empty} 
+\backslash
+caption{Inventor Job Flow Rate in Germany (
+\backslash
+%)} 
+\backslash
+begin{center} 
+\backslash
+resizebox{0.4
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/job_flow_rate.tex}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Akcigit and Goldschlag (2023) also document that inventor mobility has decreased
+ since early 2000s in the US
+\end_layout
+
+\begin_layout Itemize
+The model indicates inventor job flow rate 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ is a source of TFP growth 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ observed in recent decades
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Transition Dynamics of 
+\begin_inset Formula $Z$
+\end_inset
+
+: Subsidy to High 
+\begin_inset Formula $z$
+\end_inset
+
+ Firms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Subsidize 10% of production for the top half of the productivity distribution
+ (inventor weighted)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+begin{center} 
+\backslash
+resizebox{0.5
+\backslash
+linewidth}{!}{ 
+\backslash
+input{figures/Transition_Y.tex}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Inventor job flow from high 
+\begin_inset Formula $z$
+\end_inset
+
+ to low 
+\begin_inset Formula $z$
+\end_inset
+
+ firms 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+: dominate in short run
+\end_layout
+
+\begin_layout Enumerate
+Inventor stock at high 
+\begin_inset Formula $z$
+\end_inset
+
+ firms 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+: dominate in long run
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conclusions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Endogenous growth model with frictional labor market for inventors
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+inventors engage in in-house R&D
+\end_layout
+
+\begin_layout Itemize
+poaching firms learn from poached firms
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Administrative panel dataset on German inventors suggests 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+inventors transfer knowledge, especially from high to low
+\end_layout
+
+\begin_layout Itemize
+firms compensate for knowledge diffusion
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Calibrated model using German data implies
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+labor market friction 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ economic growth rate 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+subsidies to high productivity firms 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ aggregate productivity 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ in short run / 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ in long run
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Implication for Japan
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Labor market for inventors in Japan would be rigid, as well as labor market
+ for general workers
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Our model could explain a source of the low economic growth rate
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If open innovation becomes increasingly important relative to in-house R&D,
+ the impact of a rigid labor market could be even more severe
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix 
+\backslash
+backupbegin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Appendix: Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Firm-Level Change in the N of Inventors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\begin{align*}
+\mu_{n}(z,n)= & \underbrace{Av(z,n)\int\mathbb{I}_{P}(z,n,z',n')dF_{n}(z',n')}_{\text{Poaching hire}}\\
+ & -\underbrace{A\mathtt{v}\frac{n}{\mathtt{n}}\int\mathbb{I}_{P}(z',n',z,n)dF_{v}(z',n')}_{\text{Poached by other firms}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathtt{v}$
+\end_inset
+
+: total vacancies
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathtt{n}$
+\end_inset
+
+: total inventors
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $F_{v}$
+\end_inset
+
+: vacancy-weighted firm distribution
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kolmogorov Forward Equation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\begin{align*}
+0= & -\underbrace{\frac{\partial}{\partial n}\left(\mu_{n}(z,n)f(z,n)\right)}_{\text{N of inventor growth}}-\underbrace{\frac{\partial}{\partial z}\left(\mu_{z}(z,n)f(z,n)\right)}_{\text{Productivity growth}}\\
+ & \underbrace{-\eta f(z,n)+\eta\int_{0}^{\overline{z}}f(z,n)dz\Delta(\overline{z})}_{\text{Leapfrog}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Delta(\overline{z})$
+\end_inset
+
+: Dirac delta function
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Appendix: Empirical Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Available Variables in INV-BIO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inventors' biography
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+age, education, place, nationality, ...
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Employment characteristics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+wage, occupation, unemployment status, ...
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Establishment characteristics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+industry, age(1975-), the N of employees, mean wage, place, ...
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Patent characteristics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+date, citations, technology area, ...
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary Statistics: INV-BIO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[t] 
+\backslash
+begin{center} 
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcccc } 
+\backslash
+hline
+\backslash
+hline Establishment level variables & Mean & S.D.
+ & $N$ of est.
+ (thus.) 
+\backslash
+
+\backslash
+
+\backslash
+hline $N$ of inventors ($n_{et}$) & 4.9 & 18.5 & 119 
+\backslash
+
+\backslash
+ $N$ of employees & 688.9 & 2150.6 & 119 
+\backslash
+
+\backslash
+ Mean daily wage, Euro & 121.6 & 55.5 & 119 
+\backslash
+
+\backslash
+ $N$ of three-year forward citations for patents & 11.3 & 69.2 & 119 
+\backslash
+
+\backslash
+ (per inventor, three-year backward average, $z_{et}$) & & & 
+\backslash
+
+\backslash
+ Share of inventors moving from higher productivity est.
+ & 61.2 & 49.5 & 119 
+\backslash
+
+\backslash
+ ($
+\backslash
+text{H-Share}_{et}$), 
+\backslash
+% & & & 
+\backslash
+
+\backslash
+ Total inventor inflows & 1.67 & 5.30 & 119 
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary Statistics: SIAB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[t]
+\backslash
+begin{center} 
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcccccc } 
+\backslash
+hline
+\backslash
+hline Worker level variables & Mean & S.D.
+ & $N$ of workers (thus.) 
+\backslash
+
+\backslash
+
+\backslash
+hline Dummy for moving to less productive est.
+ ($D_{it}$) 
+\backslash
+
+\backslash
+ 
+\backslash
+quad based on est.
+ size & 0.50 & - & 4,669 
+\backslash
+
+\backslash
+ 
+\backslash
+quad based on mean wage & 0.52 & - & 4,583 
+\backslash
+
+\backslash
+ Dummy for the identified inventors ($I_{it}$) & 0.10 & - & 5,691 
+\backslash
+
+\backslash
+ Daily Wage, Euro & 44.4 & 42.1 & 5,691 
+\backslash
+
+\backslash
+ Age & 33.7 & 12.9 & 5,691 
+\backslash
+
+\backslash
+ Share of Women, 
+\backslash
+% & 47.3 & - & 5,691 
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distribution of Inventors by Patent Citation Rank
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{tabular}{cccccccc} 
+\backslash
+hline
+\backslash
+hline 
+\backslash
+multicolumn{2}{c}{Percentile rank} & $
+\backslash
+leq$50
+\backslash
+% & 50-60 & 60-70 & 70-80 & 80-90 & 90-100 
+\backslash
+
+\backslash
+
+\backslash
+hline
+\backslash
+
+\backslash
+ 
+\backslash
+multicolumn{2}{c}{Share of Inventors (
+\backslash
+%) } & 13.1 & 2.5 & 3.2 & 4.6 & 8.9 & 67.8 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\backslash
+hline 
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Identified Inventors in SIAB and Inventors in INV-BIO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} {
+\backslash
+footnotesize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{lcccc } 
+\backslash
+hline
+\backslash
+hline 
+\backslash
+multicolumn{2}{l}{Summary statistics} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+underline{SIAB}} & 
+\backslash
+underline{INV-BIO} 
+\backslash
+
+\backslash
+ (1980 - 2014) & & Workers & Identified inventors & Inventors 
+\backslash
+
+\backslash
+
+\backslash
+hline Daily wage, Euro & Mean & 59.0 & 78.9 & 156.2 
+\backslash
+
+\backslash
+ & S.D.
+ & 47.2 & 52.1 & 30.0 
+\backslash
+
+\backslash
+ Age & Mean & 38.7 & 38.4 & 42.4 
+\backslash
+
+\backslash
+ & S.D.
+ & 12.9 & 12.4 & 9.0 
+\backslash
+
+\backslash
+ 
+\backslash
+multicolumn{2}{l}{Females, 
+\backslash
+%} & 45.2 & 14.8 & 5.7 
+\backslash
+
+\backslash
+ 
+\backslash
+multicolumn{2}{l}{$N$ of obs., thousand} & 21,344 & 2,871 & 420 
+\backslash
+
+\backslash
+
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} } 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Notes: Identified inventors in SIAB are workers who work in the following
+ four occupations: "research and development", "machine-building and operations"
+, "mathematics, biology, and physics", and "mechatronics, energy, and electronic
+s."
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regional Ranks of Innovativeness as IV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{Regional Rank}_{et}$
+\end_inset
+
+: Regional patent citation rank of estab 
+\begin_inset Formula $e$
+\end_inset
+
+ in year 
+\begin_inset Formula $t$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Instrument relevance: 
+\begin_inset Formula $\text{Cov}[\text{Regional Rank}_{et-1}\cdot\text{H-Share}_{et}]\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+Lower productivity ranks in the local labor market 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ More poaching from higher productivity estab 
+\size default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Instrument exogeneity: 
+\begin_inset Formula $\mathop{\mathbb{E}}[\epsilon_{et}|\text{Regional Rank}_{et-1},\ensuremath{X_{et}},\text{FE}]=0$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+Given the control variables 
+\begin_inset Formula $\ensuremath{X_{et}}$
+\end_inset
+
+, 
+\begin_inset Formula $\text{Regional Rank}_{et-1}$
+\end_inset
+
+ does not directly affect the future innovation outcomes
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ When Inventors Come From High: IV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[t] 
+\backslash
+begin{center} 
+\backslash
+footnotesize 
+\backslash
+begin{tabular}{lcccccc } 
+\backslash
+hline
+\backslash
+hline & 
+\backslash
+multicolumn{5}{c}{$
+\backslash
+log z_{et+j}-
+\backslash
+log z_{et}$} 
+\backslash
+
+\backslash
+& $j=3$&$j=4$&$j=5$& $j=3$& $j=3$ 
+\backslash
+
+\backslash
+
+\backslash
+hline $
+\backslash
+textit{
+\backslash
+text{H-Share}}_{et}$ (
+\backslash
+%) & .092*** & .101*** &.103*** & .084*** & .088*** 
+\backslash
+
+\backslash
+ & (.007) & (.007) &(.009) & (.005) & (.006) 
+\backslash
+
+\backslash
+ & 
+\backslash
+
+\backslash
+ 
+\backslash
+hline Control & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$& $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Fixed Effects & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ & $
+\backslash
+surd$ 
+\backslash
+
+\backslash
+ Citation & 3y fwd & 3y fwd & 3y fwd & 4y fwd & 5y fwd 
+\backslash
+
+\backslash
+ 
+\backslash
+hline First Stage IV 
+\backslash
+
+\backslash
+ $
+\backslash
+textit{Regional Rank}_{et-1}$ & 24.4*** & 22.7*** &22.8***& 30.0*** & 29.3***
+ 
+\backslash
+
+\backslash
+ & (1.7) & (1.5) &(1.8)& (1.7) & (1.7) 
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+ $N$ & 22,213 & 20,052 & 17,996& 23,137 & 23,609 
+\backslash
+
+\backslash
+ F statistic & 204.8 & 232.6 &155.2 & 302.7 & 286.2 
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Notes: SEs clustered by year and establishments are reported in parentheses.
+ * 
+\begin_inset Formula $p<0.1$
+\end_inset
+
+, **
+\begin_inset Formula $p<0.05$
+\end_inset
+
+, *** 
+\begin_inset Formula $p<0.01$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "iv"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ols}{
+\backslash
+beamerbutton{back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Comparison with General Workers Using SIAB Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In INV-BIO, most inventors belong to following four occupations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+"research and development" (20.2%)
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+"machine-building and operations" (19.8%)
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+"mathematics, biology, and physics" (19.1%)
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+"mechatronics, energy, and electronics" (18.8%)
+\size default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the next analysis, we regard workers who belong to one of the four occupation
+s as inventors
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Mobility Relative to General Workers
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "probit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Do inventors tend to move from high to low relative to general workers?
+\begin_inset Formula 
+\[
+P\left(D_{it}=1\mid I_{it},X_{it}\right)=\Phi\left(\beta_{0}+\beta_{1}I_{it}+\beta_{2}X_{it}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $i$
+\end_inset
+
+: job changer without unemployment spell
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $t$
+\end_inset
+
+: 1980–2019
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X_{it}$
+\end_inset
+
+: age, a square of age, gender, and education
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventors Tend to Move from High to Low
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ensuremath{P(D_{it}=1)=1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Whole sample
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wage
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $I_{it}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.077***
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.036***
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.052***
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.012***
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(.004)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(.004)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(.004)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(.004)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Control
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ensuremath{\surd}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ensuremath{\surd}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ensuremath{\surd}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ensuremath{\surd}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measure for 
+\begin_inset Formula $D_{it}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mean Wage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mean Wage
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,572,567
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,533,344
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,082,939
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,060,714
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Notes: SEs clustered by year and establishments are reported in parentheses.
+ * 
+\begin_inset Formula $p<0.1$
+\end_inset
+
+, **
+\begin_inset Formula $p<0.05$
+\end_inset
+
+, *** 
+\begin_inset Formula $p<0.01$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{job_flow_table}{
+\backslash
+beamerbutton{back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Appendix: Numerical Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Density of Firms 
+\begin_inset Formula $\log f(z,n)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+begin{center} 
+\backslash
+resizebox{0.7
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/Density.tex}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Marginal Density of Firms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}
+\backslash
+begin{center} 
+\backslash
+begin{subfigure}[t]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Marginal Density of Firm Productivity} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/marginal_z_density.tex}} 
+\backslash
+end{subfigure}~ 
+\backslash
+begin{subfigure}[t]{.49
+\backslash
+linewidth} 
+\backslash
+caption{Marignal Density of the N of Inventor} 
+\backslash
+resizebox{
+\backslash
+linewidth}{!}{
+\backslash
+input{figures/marginal_n_density.tex}} 
+\backslash
+end{subfigure} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Value Function 
+\begin_inset Formula $\log\Omega(z,n)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_value.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Marginal Value of Productivity 
+\begin_inset Formula $\log\Omega_{z}(z,n)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_value_z.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Marginal Value of Inventor 
+\begin_inset Formula $\log\Omega_{n}(z,n)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_value_n.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vacancy Posting Rate 
+\begin_inset Formula $\log\left(v(z,n)/n\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_vacancy.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hiring Rate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_hire.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Separation Rate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_separate.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Growth Rate 
+\begin_inset Formula $\frac{\dot{n}}{n}\left(z,n\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_n_growth.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+R&D Growth Rate (
+\begin_inset Formula $\log$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_rd_growth.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Knowledge Diffusion Growth Rate (
+\begin_inset Formula $\log$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_kd_growth.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Productivity Growth Rate 
+\begin_inset Formula $\log\left(\frac{\dot{z}}{z}\left(z,n\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_z_growth.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poaching Success Indicator 
+\begin_inset Formula $\mathbb{I}_{P}\left(z,n,h,z',n',h\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/SS_Poaching_Indicator.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inventor Job Flow in the US (Akcigit and Goldschlag)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+includegraphics[width=0.8
+\backslash
+linewidth]{figures/Akcigit_Goldschlag.png} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+backupend 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
